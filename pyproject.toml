@@ -12,11 +12,12 @@ dependencies = [
     "websocket-client>=0.57.0",
     "requests>=2.21.0",
     "yarl>=1.9",
-    "wakeonlan>=4.0.0"
+    "wakeonlan>=4.0.0",
+    "samsungtvws"
 ]
 
 [project.urls]
 "Source code" = "https://github.com/xchwarze/samsung-tv-ws-api"
 
 [project.scripts]
-samsung_powertoggle = "samsung_powertoggle.__main__:mapip in"
+samsung_powertoggle = "samsung_powertoggle.__main__:main"
