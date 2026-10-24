@@ -1,0 +1,3 @@
+requests~=2.34.2
+samsungtvws~=3.0.6
+wakeonlan~=4.0.0

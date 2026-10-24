@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+
+[project]
+name = "samsung-powertoggle"
+version = "1.0.0"
+license = "LGPL-3.0"
+description = "Samsung Smart TV power toggle"
+authors = [{ name = "boopsnoot" }]
+requires-python = ">=3.10"
+dependencies = [
+    "websocket-client>=0.57.0",
+    "requests>=2.21.0",
+    "yarl>=1.9",
+    "wakeonlan>=4.0.0"
+]
+
+[project.urls]
+"Source code" = "https://github.com/xchwarze/samsung-tv-ws-api"
+
+[project.scripts]
+samsung_powertoggle = "samsung_powertoggle.__main__:mapip in"
