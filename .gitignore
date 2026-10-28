@@ -139,3 +139,4 @@ dmypy.json
 .vscode/
 _development/
 src/samsung_powertoggle/tv-token.txt
+PKGBUILD

@@ -16,8 +16,11 @@ import wakeonlan
 import socket
 import ipaddress
 from samsungtvws import SamsungTVWS
+from platformdirs import PlatformDirs
 
-TOKEN_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tv-token.txt")
+dirs = PlatformDirs("samsung-powertoggle")
+
+TOKEN_FILE = os.path.join(dirs.user_cache_dir, "tv-token.txt")
 
 def is_valid_ip(s: str) -> bool:
     try:
