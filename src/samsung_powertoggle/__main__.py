@@ -40,6 +40,7 @@ def power_state(ip: str):
     try:
         r = requests.get(f"http://{ip}:8001/api/v2/", timeout=2)
         state = r.json().get("device", {}).get("PowerState")
+        # print(r.json())
         return state.lower()
     except Exception as e:
         return "off"
@@ -56,8 +57,11 @@ def main():
 
     tv_ip = sys.argv[1]
     tv_mac = sys.argv[2]
-    if power_state(tv_ip) == "on":
-        tv = SamsungTVWS(host=tv_ip, port=8002, token_file=TOKEN_FILE, name=socket.gethostname())
+    tv = SamsungTVWS(host=tv_ip, port=8002, token_file=TOKEN_FILE, name=socket.gethostname())
+    curr_power_state = power_state(tv_ip)
+    # print(f'powerstate == {curr_power_state}')
+
+    if curr_power_state == "on" or curr_power_state == 'standby':
         tv.send_key("KEY_POWER")
     else:
         # Send a few packets; Wi-Fi wake can miss the first one
