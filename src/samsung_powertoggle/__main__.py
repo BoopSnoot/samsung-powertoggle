@@ -18,7 +18,7 @@ import ipaddress
 from samsungtvws import SamsungTVWS
 from platformdirs import PlatformDirs
 
-dirs = PlatformDirs("samsung-powertoggle")
+dirs = PlatformDirs("samsung-powertoggle", ensure_exists=True)
 
 TOKEN_FILE = os.path.join(dirs.user_cache_dir, "tv-token.txt")
 
